@@ -23,7 +23,7 @@
     <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
     <maven-war-plugin.version>3.3.1</maven-war-plugin.version>
     <dependency-check-maven.version>6.1.6</dependency-check-maven.version>
-    <spring.version>4.3.30.RELEASE</spring.version>
+    <spring.version>5.2.18.RELEASE</spring.version>
     <jax-activation.version>1.2.2</jax-activation.version>
     <jax-annotation.version>1.3.2</jax-annotation.version>
     <jax-jws.version>1.1</jax-jws.version>
@@ -37,7 +37,7 @@
     <joda-time.version>2.10.10</joda-time.version>
     <activemq.version>5.16.2</activemq.version>
     <swagger-jaxrs.version>1.6.2</swagger-jaxrs.version>
-    <cxf.version>3.4.3</cxf.version>
+    <cxf.version>3.4.4</cxf.version>
     <servlet.version>3.1.0</servlet.version>
     <junit.version>4.13.2</junit.version>
     <jstl.version>1.2.5</jstl.version>
@@ -60,7 +60,7 @@
     <powermock.version>2.0.9</powermock.version>
     <junitparams.version>1.1.1</junitparams.version>
     <hamcrest.version>2.2</hamcrest.version>
-    <wss4j.version>2.3.1</wss4j.version>
+    <wss4j.version>2.3.2</wss4j.version>
     <bcprov.version>1.68</bcprov.version>
     <angularjs.version>1.6.9</angularjs.version>
     <guava.version>30.1.1-jre</guava.version>
@@ -846,7 +846,7 @@
                     </goals>
                   </pluginExecutionFilter>
                   <action>
-                    <ignore></ignore>
+                    <ignore/>
                   </action>
                 </pluginExecution>
               </pluginExecutions>
@@ -905,14 +905,12 @@
             <phase>install</phase>
             <configuration>
               <target>
-                <echo
-                    message="making a copy for deployment: ${project.build.directory}/${project.artifactId}.${project.packaging} " />
+                <echo message="making a copy for deployment: ${project.build.directory}/${project.artifactId}.${project.packaging} "/>
                 <copy overwrite="true" verbose="true" toDir="${project.build.directory}">
                   <fileset dir="${project.build.directory}">
-                    <include name="${project.build.finalName}.${project.packaging}" />
+                    <include name="${project.build.finalName}.${project.packaging}"/>
                   </fileset>
-                  <globmapper from="${project.build.finalName}.${project.packaging}"
-                      to="${project.artifactId}.${project.packaging}" />
+                  <globmapper from="${project.build.finalName}.${project.packaging}" to="${project.artifactId}.${project.packaging}"/>
                 </copy>
               </target>
             </configuration>
